@@ -1,0 +1,14 @@
+{{- range .Values.namespaces }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-{{ . }}
+spec:
+  capacity:
+    storage: {{ $.Values.data.pv.capacity }}
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: {{ $.Values.data.pv.hostPath }}/{{ . }}
+---
+{{- end }}

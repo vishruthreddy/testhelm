@@ -1,0 +1,4 @@
+apiVersion: v2
+name: multi-ns-helm
+description: A Helm chart to create 5 namespaces with full Kubernetes resources in each
+version: 0.1.0

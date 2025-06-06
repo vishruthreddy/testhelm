@@ -1,0 +1,10 @@
+{{- range .Values.namespaces }}
+apiVersion: example.com/v1
+kind: Widget
+metadata:
+  name: example-widget
+  namespace: {{ . }}
+spec:
+  size: 3
+---
+{{- end }}

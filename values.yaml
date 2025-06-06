@@ -1,0 +1,17 @@
+namespaces:
+  - app-ns1
+  - app-ns2
+  - app-ns3
+  - app-ns4
+  - app-ns5
+
+data:
+  configMap:
+    key1: value1
+  secret:
+    password: cGFzc3dvcmQ=  # base64 of 'password'
+  pvc:
+    storage: 1Gi
+  pv:
+    capacity: 1Gi
+    hostPath: /mnt/data

@@ -1,0 +1,15 @@
+{{- range .Values.namespaces }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-{{ . }}
+  namespace: {{ . }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ $.Values.data.pvc.storage }}
+  volumeName: pv-{{ . }}
+---
+{{- end }}
